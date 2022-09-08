@@ -1,4 +1,4 @@
 
 function onload(){
-  var paragraph = document.getElementById("p").textContent('aaaaaasssssss')
+  var paragraph = document.getElementById("p").textContent('ksl')
 }
