@@ -1,4 +1,4 @@
 
 function onload(){
-document.write("aaaaa")
+document.write("<h1>aaaaa</h1>")
 }
