@@ -1,4 +1,7 @@
 
 function onload(){
-document.write("<h1>aaaaa</h1>");
+  var paragraph = document.getElementById("p");
+  var text = document.createTextNode("This just got added");
+  paragraph.appendChild(text);
+
 }
