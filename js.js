@@ -8,6 +8,7 @@ fetch(url).then(function(res){
 
 
 function onload(){
+  console.log(t)
   document.write("salut toi");
-  document.write(t[0])
+  document.write(t);
 }
