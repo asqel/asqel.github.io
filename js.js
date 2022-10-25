@@ -59,6 +59,7 @@ function exec_bf(){
         p+=1;
       }
     }
+    else{p+=1}
   }
 
 }
