@@ -1,6 +1,6 @@
 var x=4;
 function exec_bf(){
-  text=document.getElementById("bf_id").contentEditable;
+  text=document.getElementById("bf_id").value
   console.log(text);
   let p=0;
   coms=["+","-","<",">","[","]",","];
@@ -13,23 +13,50 @@ function exec_bf(){
           cells[c]=0;
         }
         cells[c]+=1;
+        p+=1;
+
       }
       if(text[p]=="-"){
         if (!cells.keys().contains(c)){
           cells[c]=0;
         }
         cells[c]-=1;
+        p+=1;
+
       }
       if(text[p]==">"){
         c+=1;
+        p+=1;
       }
       if(text[p]=="<"){
         c-=1;
+        p+=1
+
+      }
+      if(text[p]=="."){
+        if (!cells.keys().contains(c)){
+          cells[c]=0;
+        }
+        document.getElementById("output").value+=String.fromCharCode(cells[c]);
+        p+=1;
       }
       if(text[p]==']'){
         if (cells[c]==0){
-          
+          b=p;
+          count=0;
+          while(b>0){
+            if(text[b]=="]"){count+=1;b-=1}
+            else if(text[b]=="[" && count>0){count-=1;b-=1;}
+            else if(text[b]=="["&&  count==0){break}
+            else{b-=1;}
+
+          }
+          p=b
+
         }
+      }
+      else{
+        p+=1;
       }
     }
   }
