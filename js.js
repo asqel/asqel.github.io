@@ -9,7 +9,7 @@ function exec_bf(){
   while(p<text.lenght){
     if (coms.contains(text[p])) {
       if(text[p]=="+"){
-        if (!cells.keys().contains(c)){
+        if (!Object.keys(cells).includes(num.toString(c))){
           cells[c]=0;
         }
         cells[c]+=1;
@@ -17,7 +17,7 @@ function exec_bf(){
 
       }
       if(text[p]=="-"){
-        if (!cells.keys().contains(c)){
+        if (!Object.keys(cells).includes(num.toString(c))){
           cells[c]=0;
         }
         cells[c]-=1;
@@ -34,7 +34,7 @@ function exec_bf(){
 
       }
       if(text[p]=="."){
-        if (!cells.keys().contains(c)){
+        if (!Object.keys(cells).includes(num.toString(c))){
           cells[c]=0;
         }
         document.getElementById("output").value+=String.fromCharCode(cells[c]);
