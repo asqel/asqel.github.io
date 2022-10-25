@@ -7,7 +7,7 @@ function exec_bf(){
   cells={0:0};
   c=0;
   while(p<text.lenght){
-    if (coms.contains(text[p])) {
+    if (coms.includes(text[p])) {
       if(text[p]=="+"){
         if (!Object.keys(cells).includes(num.toString(c))){
           cells[c]=0;
