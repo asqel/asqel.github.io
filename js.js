@@ -1,4 +1,4 @@
-
+var x=4;
 function exec_bf(){
   text=document.getElementById("bf_id").contentEditable;
   console.log(text);
