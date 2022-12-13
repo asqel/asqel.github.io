@@ -1,0 +1,25 @@
+h1{
+    font-family: 'comic sans ms';
+}
+
+
+#c2{
+    transform: translate(100%,0%);
+}
+
+
+
+#normal{
+    width: 340px;
+    height: auto;
+}
+#fée{
+    width: 220px;
+    height: auto;
+}
+
+#vol{
+    width:270px;
+    height: auto;
+}
+
