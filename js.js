@@ -132,7 +132,6 @@ function combat_load(){
     n=num_to_name(p)
     console.log(n,p)
     console.log("cochons/"+n+".png")
-    return 0
     p=cochons[n]
     document.getElementById("j1im").src="cochons/"+n+".png"
     document.getElementById("j1name").innerText=n
