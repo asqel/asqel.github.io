@@ -55,7 +55,14 @@ cochons={
             "wazo":{"name":"wazo","damage":40,"proba":72.5,"type":"vol"},
             "picor":{"name":"picor","damage":15,"proba":92.3,"type":"insecte"},
             "je tombe":{"name":"je tombe","damage":50,"proba":100,"type":"normal"}
-}},
+    }},
+    "upperchon":{"type":"combat",
+        "attack":{
+            "bacon hook":{"name":"bacon hook","damage":40,"proba":90,"type":"combat"},
+            "one punch jambon":{"name":"one punch jambon","damage":9999,"proba":1,"type":"combat"},
+            "kick-bbq":{"name":"kick-bbq","damage":60,"proba":75,"type":"combat"},
+            "machouille":{"name":"machouille","damage":20,"proba":100,"type":"normal"}
+    }}
 }
 
 table_type={
@@ -107,7 +114,8 @@ table_type={
 num={"1":"just a pig",
 "2":"psycochon",
 "3":"cochofée",
-"4":"volochon"}
+"4":"volochon",
+"5":"upperchon"}
 function num_to_name(n){
     if(n in num){
 
@@ -131,7 +139,13 @@ function combat_load(){
     document.getElementById("attack2").innerText=l[1]+" : "+p["attack"][l[1]]["type"]+"    "
     document.getElementById("attack3").innerText=l[2]+" : "+p["attack"][l[2]]["type"]+"     "
     document.getElementById("attack4").innerText=l[3]+" : "+p["attack"][l[3]]["type"]+"    "
-    n2=Math.floor(Math.random()*(4-1+1)+1)
+
+    document.getElementById("attack1").style="background-color:#"+get_color(p["attack"][l[0]]["type"])+";"
+    document.getElementById("attack2").style="background-color:#"+get_color(p["attack"][l[1]]["type"])+";"
+    document.getElementById("attack3").style="background-color:#"+get_color(p["attack"][l[2]]["type"])+";"
+    document.getElementById("attack4").style="background-color:#"+get_color(p["attack"][l[3]]["type"])+";"
+
+    n2=Math.floor(Math.random()*(Object.keys(cochons).length-1+1)+1)
     document.getElementById("j2im").src="cochons/"+num_to_name(n2)+".png"
     document.getElementById("j2name").innerText=num_to_name(n2)
     document.getElementById("j2pv").innerText="160 PV"
@@ -173,6 +187,25 @@ function attack(x){
 
 }
 function anime(x,y){
+    if(x=="j1"){
+
+    }
     
 }
 
+cols={
+    "normal":"BABABA",
+    "psy":"6D00DB",
+    "fee":"FF9BFF",
+    "vol":"AEFFFF",
+    "insecte":"80C226",
+    "roche":"632D1F",
+    "combat":"D94B35"
+
+}
+function get_color(x){
+    if(x in cols){
+        return cols[x]
+    }
+    
+}
