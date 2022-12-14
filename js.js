@@ -131,6 +131,7 @@ function combat_load(){
     p=document.location.href.split("co=")[1]
     n=num_to_name(p)
     console.log(n,p)
+    console.log("cochons/"+n+".png")
     return 0
     p=cochons[n]
     document.getElementById("j1im").src="cochons/"+n+".png"
