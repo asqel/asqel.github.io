@@ -130,6 +130,8 @@ function damage_calc(type_att,type_def){
 function combat_load(){
     p=document.location.href.split("co=")[1]
     n=num_to_name(p)
+    console.log(n,p)
+    return 0
     p=cochons[n]
     document.getElementById("j1im").src="cochons/"+n+".png"
     document.getElementById("j1name").innerText=n
